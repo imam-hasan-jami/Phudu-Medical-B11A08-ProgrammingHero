@@ -4,7 +4,7 @@ import logo from '../assets/logo.png';
 
 const Navbar = () => {
     return (
-        <div className="navbar bg-base-100 max-w-[380px] mx-auto lg:max-w-[1440px] lg:mx-auto p-0 my-4">
+        <div className="navbar max-w-[380px] mx-auto lg:max-w-[1440px] lg:mx-auto p-0 py-4">
             <div className="navbar-start">
                 <Link to="/" className="btn btn-ghost p-0">
                     <img
