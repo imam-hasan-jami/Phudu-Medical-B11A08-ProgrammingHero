@@ -23,7 +23,7 @@ const Footer = () => {
                     <ul className="menu menu-horizontal flex flex-col lg:flex-row gap-5 lg:gap-12 text-left font-jakarta-sans text-[14px] lg:text-[18px] font-medium">
                         <NavLink
                             className={({ isActive }) =>
-                                isActive ? "bg-[#176AE5] text-white p-2" : "p-2"
+                                isActive ? "bg-[#176AE5] text-white p-2 rounded-lg" : "p-2"
                             }
                             to="/"
                         >
@@ -31,7 +31,7 @@ const Footer = () => {
                         </NavLink>
                         <NavLink
                             className={({ isActive }) =>
-                                isActive ? "bg-[#176AE5] text-white p-2" : "p-2"
+                                isActive ? "bg-[#176AE5] text-white p-2 rounded-lg" : "p-2"
                             }
                             to="/my-bookings"
                         >
@@ -39,7 +39,7 @@ const Footer = () => {
                         </NavLink>
                         <NavLink
                             className={({ isActive }) =>
-                                isActive ? "bg-[#176AE5] text-white p-2" : "p-2"
+                                isActive ? "bg-[#176AE5] text-white p-2 rounded-lg" : "p-2"
                             }
                             to="/blogs"
                         >
@@ -47,7 +47,7 @@ const Footer = () => {
                         </NavLink>
                         <NavLink
                             className={({ isActive }) =>
-                                isActive ? "bg-[#176AE5] text-white p-2" : "p-2"
+                                isActive ? "bg-[#176AE5] text-white p-2 rounded-lg" : "p-2"
                             }
                             to="/contact-us"
                         >

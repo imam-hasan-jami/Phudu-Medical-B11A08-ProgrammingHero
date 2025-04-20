@@ -6,17 +6,22 @@ const Navbar = () => {
     return (
         <div className="navbar bg-base-100 max-w-[380px] mx-auto lg:max-w-[1440px] lg:mx-auto p-0 my-4">
             <div className="navbar-start">
-                
                 <Link to="/" className="btn btn-ghost p-0">
-                    <img className="w-8 mr-2 lg:w-11 lg:mr-4" src={logo} alt="" />
-                    <h1 className='text-2xl lg:text-[32px] font-jakarta-sans font-extrabold'>Phudu</h1>
+                    <img
+                        className="w-8 mr-2 lg:w-11 lg:mr-4"
+                        src={logo}
+                        alt=""
+                    />
+                    <h1 className="text-2xl lg:text-[32px] font-jakarta-sans font-extrabold">
+                        Phudu
+                    </h1>
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal flex gap-12 font-jakarta-sans text-[18px] font-medium">
                     <NavLink
                         className={({ isActive }) =>
-                            isActive ? "border-b-2" : ""
+                            isActive ? "bg-[#176AE5] text-white p-2 rounded-lg" : "p-2"
                         }
                         to="/"
                     >
@@ -24,7 +29,7 @@ const Navbar = () => {
                     </NavLink>
                     <NavLink
                         className={({ isActive }) =>
-                            isActive ? "border-b-2" : ""
+                            isActive ? "bg-[#176AE5] text-white p-2 rounded-lg" : "p-2"
                         }
                         to="/my-bookings"
                     >
@@ -32,7 +37,7 @@ const Navbar = () => {
                     </NavLink>
                     <NavLink
                         className={({ isActive }) =>
-                            isActive ? "border-b-2" : ""
+                            isActive ? "bg-[#176AE5] text-white p-2 rounded-lg" : "p-2"
                         }
                         to="/blogs"
                     >
@@ -40,7 +45,7 @@ const Navbar = () => {
                     </NavLink>
                     <NavLink
                         className={({ isActive }) =>
-                            isActive ? "border-b-2" : ""
+                            isActive ? "bg-[#176AE5] text-white p-2 rounded-lg" : "p-2"
                         }
                         to="/contact-us"
                     >
@@ -49,7 +54,9 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn bg-[#176AE5] rounded-[99px] font-jakarta-sans text-white text-[20px] px-[30px] py-[28px] hidden lg:flex">Emergency</a>
+                <a className="btn bg-[#176AE5] rounded-[99px] font-jakarta-sans text-white text-[20px] px-[30px] py-[28px] hidden lg:flex">
+                    Emergency
+                </a>
                 {/* <Link to='/' className='bg-[#176AE5]'>Emergency</Link> */}
 
                 <div className="dropdown dropdown-end">
@@ -80,7 +87,7 @@ const Navbar = () => {
                     >
                         <NavLink
                             className={({ isActive }) =>
-                                isActive ? "bg-[#176AE5] text-white p-2" : "p-2"
+                                isActive ? "bg-[#176AE5] text-white p-2 rounded-lg" : "p-2"
                             }
                             to="/"
                         >
@@ -88,7 +95,7 @@ const Navbar = () => {
                         </NavLink>
                         <NavLink
                             className={({ isActive }) =>
-                                isActive ? "bg-[#176AE5] text-white p-2" : "p-2"
+                                isActive ? "bg-[#176AE5] text-white p-2 rounded-lg" : "p-2"
                             }
                             to="/my-bookings"
                         >
@@ -96,7 +103,7 @@ const Navbar = () => {
                         </NavLink>
                         <NavLink
                             className={({ isActive }) =>
-                                isActive ? "bg-[#176AE5] text-white p-2" : "p-2"
+                                isActive ? "bg-[#176AE5] text-white p-2 rounded-lg" : "p-2"
                             }
                             to="/blogs"
                         >
@@ -104,7 +111,7 @@ const Navbar = () => {
                         </NavLink>
                         <NavLink
                             className={({ isActive }) =>
-                                isActive ? "bg-[#176AE5] text-white p-2" : "p-2"
+                                isActive ? "bg-[#176AE5] text-white p-2 rounded-lg" : "p-2"
                             }
                             to="/contact-us"
                         >
