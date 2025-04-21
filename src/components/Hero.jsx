@@ -3,7 +3,7 @@ import bannerImg from '../assets/banner-img-1.png';
 
 const Hero = () => {
     return (
-        <div className='max-w-[380px] mx-auto lg:max-w-[1600px] lg:mx-auto py-[30px] lg:px-[160px] lg:py-[64px] bg-gradient-to-b from-white/0 to-white border-3 border-white rounded-[24px]'>
+        <div className='max-w-[380px] mx-auto lg:max-w-[1600px] lg:mx-auto py-[30px] lg:px-[160px] lg:py-[64px] lg:mb-20 bg-gradient-to-b from-white/0 to-white border-3 border-white rounded-[24px]'>
             <div>
                 <h1 className='font-jakarta-sans text-3xl lg:text-5xl font-extrabold text-center mb-4'>Dependable Care, Backed by Trusted <br /> Professionals.</h1>
                 <p className='font-jakarta-sans font-medium text-[14px] lg:text-base text-center mb-6 px-4'>Our platform connects you with verified, experienced doctors across various specialties — all at your convenience. Whether it's a <br /> routine checkup or urgent consultation, book appointments in minutes and receive quality care you can trust.</p>

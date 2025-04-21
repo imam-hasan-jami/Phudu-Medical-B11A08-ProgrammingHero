@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Hero from '../components/Hero';
+import DoctorsContainer from '../components/DoctorsContainer';
+import { useLoaderData } from 'react-router';
 
 const Home = () => {
+    const doctorsData = useLoaderData();
+    const [doctors, setDoctors] = useState(doctorsData);
+
+
     return (
         <div>
             <Hero />
-            Home Page
+            <DoctorsContainer doctors={doctors} />
         </div>
     );
 };
