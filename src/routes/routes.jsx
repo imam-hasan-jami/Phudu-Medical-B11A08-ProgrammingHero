@@ -5,6 +5,7 @@ import ErrorPage from '../pages/ErrorPage';
 import Home from '../pages/Home';
 import MyBookings from '../pages/MyBookings';
 import Blogs from '../pages/Blogs';
+import DoctorDetails from '../pages/DoctorDetails';
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
             {
                 path: "blogs",
                 Component: Blogs,
+            },
+            {
+                path: "doctor-details/:id",
+                Component: DoctorDetails
             }
         ]
     }
