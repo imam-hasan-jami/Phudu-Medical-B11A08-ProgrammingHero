@@ -1,5 +1,6 @@
 import React from 'react';
-import bannerImg from '../assets/banner-img-1.png';
+import bannerImg1 from '../assets/banner-img-1.png';
+import bannerImg2 from '../assets/banner-img-2.jpg';
 
 const Hero = () => {
     return (
@@ -15,8 +16,8 @@ const Hero = () => {
             </form>
 
             <div className='w-9/10 mx-auto lg:w-full lg:flex gap-6'>
-                <img className='mb-6 lg:mb-0' src={bannerImg} alt="" />
-                <img src={bannerImg} alt="" />
+                <img className='mb-6 lg:mb-0' src={bannerImg1} alt="" />
+                <img className='w-[578px] h-[350px] object-cover rounded-2xl' src={bannerImg2} alt="" />
             </div>
         </div>
     );

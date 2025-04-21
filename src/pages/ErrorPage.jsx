@@ -7,7 +7,6 @@ const ErrorPage = () => {
         <div>
             <Navbar />
             <h1>Error 404 Not Found</h1>
-            <Footer />
         </div>
     );
 };
