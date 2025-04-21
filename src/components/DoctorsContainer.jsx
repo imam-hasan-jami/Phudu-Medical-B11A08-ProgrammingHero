@@ -15,23 +15,23 @@ const DoctorsContainer = ({ doctors }) => {
 
     return (
         <div className="max-w-[380px] mx-auto lg:max-w-[1440px]">
-            <h1 className="font-jakarta-sans lg:font-extrabold lg:text-[40px] text-center lg:mb-4">
+            <h1 className="font-bold lg:font-extrabold text-3xl lg:text-[40px] text-center mb-4">
                 Our Best Doctors
             </h1>
-            <p className="font-jakarta-sans  text-center lg:mb-8">
+            <p className="text-center text-[14px] lg:text-base mb-6 lg:mb-8">
                 Our platform connects you with verified, experienced doctors
                 across various specialties — all at your convenience. Whether
                 it's a <br /> routine checkup or urgent consultation, book
                 appointments in minutes and receive quality care you can trust.
             </p>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-6">
                 {displayDoctors.map((doctor) => (
                     <DoctorCard key={doctor.id} doctor={doctor} />
                 ))}
             </div>
 
-            <div className="flex items-center justify-center mt-12">
+            <div className="flex items-center justify-center mt-4 lg:mt-12">
                 <button
                     type="submit"
                     onClick={() => {
