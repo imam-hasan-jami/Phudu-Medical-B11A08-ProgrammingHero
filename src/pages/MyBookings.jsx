@@ -1,9 +1,12 @@
 import React from 'react';
+import MyAppointments from '../components/MyAppointments';
+import NoAppointment from '../components/NoAppointment';
 
 const MyBookings = () => {
     return (
         <div>
-            <h1>My Bookings</h1>
+            <NoAppointment />
+            <MyAppointments />
         </div>
     );
 };

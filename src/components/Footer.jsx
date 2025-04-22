@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaFacebook, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <div className="bg-white flex flex-col items-center justify-center py-[100px] px-[80px]">
+        <div className="bg-white flex flex-col items-center justify-center py-[100px] px-[80px] mt-27.5">
             <div className="mb-4 lg:mb-8">
                 <Link to="/" className="btn btn-ghost p-0">
                     <img
