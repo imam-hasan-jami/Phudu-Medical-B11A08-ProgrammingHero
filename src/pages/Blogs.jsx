@@ -1,11 +1,6 @@
-import React, { useState } from 'react';
 import BlogCard from '../components/BlogCard';
-import { useLoaderData } from 'react-router';
 
 const Blogs = () => {
-    const blogsData = useLoaderData();
-    const [blogs, setBlogs] = useState(blogsData);
-
     return (
         <div>
             <div className="text-center">
@@ -15,9 +10,7 @@ const Blogs = () => {
                     developer
                 </p>
             </div>
-            {blogs.map((blog) => (
-                <BlogCard key={blog.id} blog={blog} />
-            ))}
+            <BlogCard />
         </div>
     );
 };
