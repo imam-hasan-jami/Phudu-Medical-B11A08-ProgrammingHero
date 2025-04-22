@@ -37,7 +37,10 @@ const DoctorCard = ({ doctor }) => {
                         <p className='lg:text-[18px] text-[#0F0F0FB3]/70'>Reg No: {unique_registration_number}</p>
                     </div>
                     <div className="flex justify-center mb-4 lg:mb-8">
-                        <Link to={`/doctor-details/${id}`}>
+                        <Link 
+                            to={`/doctor-details/${id}`}
+                            onClick={() => window.scrollTo(0, 0)}
+                        >
                             <button className="btn bg-transparent rounded-[99px] border-1 border-[#176AE5] text-[#176AE5] text-[20px] w-full px-[20px] py-[12px]">View Details</button>
                         </Link>
                     </div>

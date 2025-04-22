@@ -20,11 +20,17 @@ const AppointmentBooking = () => {
             <hr className=" border-t border-dashed border-gray-300 my-2 lg:my-4" />
             <div className="flex justify-between items-center">
                 <p className="text-[18px] font-bold">Availability</p>
-                <p className={`text-[14px] font-medium ${isAvailableToday 
-                                                        ? 'bg-[#09982F]/10 text-[#09982F] border-[#09982F]/10' 
-                                                        : 'bg-[#FF3131]/10 text-[#FF3131] border-[#FF3131]/10'}
-                                rounded-[99px] border-1 px-3.5 py-2`}>
-                    {isAvailableToday ? 'Doctor Available Today' : 'Doctor Not Available Today'}
+                <p
+                    className={`text-[14px] font-medium ${
+                        isAvailableToday
+                            ? "bg-[#09982F]/10 text-[#09982F] border-[#09982F]/10"
+                            : "bg-[#FF3131]/10 text-[#FF3131] border-[#FF3131]/10"
+                    }
+                                rounded-[99px] border-1 px-3.5 py-2`}
+                >
+                    {isAvailableToday
+                        ? "Doctor Available Today"
+                        : "Doctor Not Available Today"}
                 </p>
             </div>
             <hr className=" border-t border-dashed border-gray-300 my-2 lg:my-4" />
@@ -33,7 +39,18 @@ const AppointmentBooking = () => {
                 appointments for today only. We appreciate your understanding
                 and cooperation.
             </p>
-            <button className="btn bg-[#176AE5] rounded-[99px] w-full text-white text-[20px] px-[20px] py-[14px] mt-[40px] mb-6">Book Appointment Now</button>
+            <button
+                className={`btn ${
+                    isAvailableToday
+                    ? "bg-[#176AE5]"
+                    : "bg-gray-500"
+                } rounded-[99px] w-full text-white text-[18px] px-[20px] py-[14px] mt-[40px] mb-6`}
+                disabled={!isAvailableToday}
+            >
+                {isAvailableToday
+                    ? "Book Appointment Now"
+                    : "Appointment Can't Be Booked Now"}
+            </button>
         </div>
     );
 };
