@@ -27,6 +27,8 @@ const router = createBrowserRouter([
             {
                 path: "blogs",
                 Component: Blogs,
+                hydrateFallbackElement: <p>Loading, please wait...</p>,
+                loader: () => fetch('../blogs.json'),
             },
             {
                 path: "doctor-details/:id",
