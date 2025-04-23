@@ -7,6 +7,7 @@ import MyBookings from '../pages/MyBookings';
 import Blogs from '../pages/Blogs';
 import DoctorDetails from '../pages/DoctorDetails';
 import DocNotFound from '../components/DocNotFound';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const router = createBrowserRouter([
     {
@@ -18,24 +19,25 @@ const router = createBrowserRouter([
                 // path: "/",
                 index: true,
                 Component: Home,
-                hydrateFallbackElement: <p>Loading, please wait...</p>,
+                hydrateFallbackElement: <LoadingSpinner />,
                 loader: () => fetch('../doctors.json'),
             },
             {
                 path: "my-bookings",
+                hydrateFallbackElement: <LoadingSpinner />,
                 Component: MyBookings,
             },
             {
                 path: "blogs",
                 Component: Blogs,
-                hydrateFallbackElement: <p>Loading, please wait...</p>,
+                hydrateFallbackElement: <LoadingSpinner />,
                 loader: () => fetch('../blogs.json'),
             },
             {
                 path: "doctor-details/:id",
                 errorElement: <DocNotFound />,
                 Component: DoctorDetails,
-                hydrateFallbackElement: <p>Loading, please wait...</p>,
+                hydrateFallbackElement: <LoadingSpinner />,
                 loader: () => fetch('../doctors.json'),
             }
         ]
