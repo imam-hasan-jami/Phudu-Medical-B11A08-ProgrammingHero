@@ -1,16 +1,55 @@
-import React from "react";
-import { useLoaderData, useParams } from "react-router";
+import React, { useEffect, useState } from "react";
+import { useLoaderData, useParams, useNavigate } from "react-router";
+import { bookAppointment, getBookedAppointments } from "../utils";
+import toast from "react-hot-toast";
 
 const AppointmentBooking = () => {
     const doctorsData = useLoaderData();
     const { id } = useParams();
+    const navigate = useNavigate();
     const singleDoctor = doctorsData.find(doctor => doctor.id === parseInt(id));
-    const { availability } = singleDoctor || {};
+    const { name, availability } = singleDoctor || {};
+    const [isBooked, setIsBooked] = useState(false);
 
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const currentDay = daysOfWeek[new Date().getDay()];
 
     const isAvailableToday = availability.includes(currentDay);
+
+    useEffect(() => {
+        const bookedAppointments = getBookedAppointments();
+        const alreadyBooked = bookedAppointments.find(app => app.id === singleDoctor.id);
+        setIsBooked(alreadyBooked);
+    }, [singleDoctor]);
+
+    const handleBookAppointment = () => {
+        if (!isAvailableToday) {
+            toast.error(
+                `${name} is not available today. Please check back another day.`
+            );
+        } else if (isBooked) {
+            toast.error(`You have already booked an appointment with ${name}`);
+        } else {
+            bookAppointment(singleDoctor);
+            setIsBooked(true);
+            navigate("/my-bookings");
+            toast.success(`Appointment with ${name} booked successfully`);
+        }
+    };
+
+    const getButtonStyle = () => {
+        if (isBooked) {
+            return "bg-green-600";
+        }
+        return isAvailableToday ? "bg-[#176AE5]" : "bg-gray-500 cursor-not-allowed";
+    }
+
+    const getButtonText = () => {
+        if (isBooked) {
+            return "Appointment Booked Successfully";
+        }
+        return isAvailableToday ? "Book Appointment Now" : "Appointment Can't Be Booked Now";
+    }
 
     return (
         <div className="bg-white max-w-[380px] mx-auto lg:max-w-[1440px] p-8 rounded-3xl mb-20">
@@ -40,16 +79,10 @@ const AppointmentBooking = () => {
                 and cooperation.
             </p>
             <button
-                className={`btn ${
-                    isAvailableToday
-                    ? "bg-[#176AE5]"
-                    : "bg-gray-500"
-                } rounded-[99px] w-full text-white text-[18px] px-[20px] py-[14px] mt-[40px] mb-6`}
-                disabled={!isAvailableToday}
+                onClick={handleBookAppointment}
+                className={`${getButtonStyle()} cursor-pointer rounded-[99px] w-full text-white text-[18px] px-[20px] py-[14px] mt-[40px] mb-6`}
             >
-                {isAvailableToday
-                    ? "Book Appointment Now"
-                    : "Appointment Can't Be Booked Now"}
+                {getButtonText()}
             </button>
         </div>
     );
