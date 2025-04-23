@@ -1,7 +1,10 @@
 import React from "react";
 import { Link, NavLink } from "react-router";
 import logo from "../assets/logo.png";
-import { FaGithub, FaLinkedin, FaFacebook, FaYoutube } from "react-icons/fa";
+import githubLogo from "../assets/github-logo.png";
+import linkedinLogo from "../assets/linkedin-logo.png";
+import facebookLogo from "../assets/facebook-logo.png";
+import instagramLogo from "../assets/instagram-logo.png";
 
 const Footer = () => {
     return (
@@ -58,17 +61,17 @@ const Footer = () => {
             </div>
             <div className="divider w-4/5 mx-auto"></div>
             <div className="flex gap-6 mt-4 lg:mt-8">
-                <a href="https://github.com/">
-                    <FaGithub size={36} />
+                <a href="https://github.com/imam-hasan-jami" target="_blank">
+                    <img className="w-9" src={githubLogo} alt="" />
                 </a>
-                <a href="https://www.linkedin.com/">
-                    <FaLinkedin size={36} />
+                <a href="https://www.linkedin.com/in/imam-hasan-jami/" target="_blank">
+                    <img className="w-9" src={linkedinLogo} alt="" />
                 </a>
-                <a href="https://www.facebook.com/">
-                    <FaFacebook size={36} />
+                <a href="https://www.facebook.com/cristiano7sadi" target="_blank">
+                    <img className="w-9" src={facebookLogo} alt="" />
                 </a>
-                <a href="https://www.youtube.com/">
-                    <FaYoutube size={36} />
+                <a href="https://www.instagram.com/chainless_slave1.0" target="_blank">
+                    <img className="w-9" src={instagramLogo} alt="" />
                 </a>
             </div>
         </div>
