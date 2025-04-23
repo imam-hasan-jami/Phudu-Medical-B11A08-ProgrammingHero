@@ -6,6 +6,7 @@ import Home from '../pages/Home';
 import MyBookings from '../pages/MyBookings';
 import Blogs from '../pages/Blogs';
 import DoctorDetails from '../pages/DoctorDetails';
+import DocNotFound from '../components/DocNotFound';
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "doctor-details/:id",
+                errorElement: <DocNotFound />,
                 Component: DoctorDetails,
                 hydrateFallbackElement: <p>Loading, please wait...</p>,
                 loader: () => fetch('../doctors.json'),
