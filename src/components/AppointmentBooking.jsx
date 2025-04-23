@@ -52,7 +52,7 @@ const AppointmentBooking = () => {
     }
 
     return (
-        <div className="bg-white max-w-[380px] mx-auto lg:max-w-[1440px] p-8 rounded-3xl mb-20">
+        <div className="bg-white max-w-[380px] mx-auto lg:max-w-[1440px] p-4 lg:p-8 rounded-3xl mb-20">
             <h1 className="text-2xl font-extrabold text-center">
                 Book an Appointment
             </h1>
@@ -73,14 +73,14 @@ const AppointmentBooking = () => {
                 </p>
             </div>
             <hr className=" border-t border-dashed border-gray-300 my-2 lg:my-4" />
-            <p className="bg-[#FFA0001A] text-[#FFA000] text-[14px] font-medium w-7/10 px-4 py-2 rounded-[99px] border-1 border-[#FFA000]/20">
+            <p className="bg-[#FFA0001A] text-[#FFA000] text-[14px] font-medium lg:w-7/10 p-6 lg:px-4 lg:py-2 mt-4 rounded-2xl lg:rounded-[99px] border-1 border-[#FFA000]/20">
                 ⓘ Due to high patient volume, we are currently accepting
                 appointments for today only. We appreciate your understanding
                 and cooperation.
             </p>
             <button
                 onClick={handleBookAppointment}
-                className={`${getButtonStyle()} cursor-pointer rounded-[99px] w-full text-white text-[18px] px-[20px] py-[14px] mt-[40px] mb-6`}
+                className={`${getButtonStyle()} cursor-pointer rounded-2xl lg:rounded-[99px] w-full text-white text-[18px] px-[20px] py-[14px] mt-[40px] mb-6`}
             >
                 {getButtonText()}
             </button>

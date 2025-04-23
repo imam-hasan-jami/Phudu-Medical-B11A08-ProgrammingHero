@@ -8,11 +8,11 @@ const DoctorProfile = () => {
     const { doctor_image, name, education, works_at, unique_registration_number, availability, consultation_fee } = singleDoctor || {};
 
     return (
-        <div className="bg-white max-w-[380px] mx-auto lg:max-w-[1440px] p-8 rounded-3xl mb-6">
-            <div className="bg-white flex items-center gap-6 p-6 rounded-3xl">
-                <img className='w-[335px] h-[383px] rounded-2xl' src={doctor_image} alt="" />
+        <div className="bg-white max-w-[380px] mx-auto lg:max-w-[1440px] p-4 lg:p-8 rounded-3xl mb-6">
+            <div className="bg-white flex flex-col lg:flex-row items-center gap-6 p-3 lg:p-6 rounded-3xl">
+                <img className='w-auto lg:w-[335px] h-[383px] rounded-2xl' src={doctor_image} alt="" />
                 <div className="w-full">
-                    <h1 className="text-[32px] font-extrabold">
+                    <h1 className="text-[27px] lg:text-[32px] font-extrabold">
                         {name}
                     </h1>
                     <p className="text-[#0F0F0F99] text-[18px] font-medium mt-3">
@@ -34,7 +34,7 @@ const DoctorProfile = () => {
                         </p>
                     </div>
                     <hr className="w-9/10 border-t border-dashed border-gray-300 my-2 lg:my-4" />
-                    <div className="flex items-center gap-4">
+                    <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4">
                         <p className="font-bold">Availability</p>
                         {
                             availability.map((day, index) => (
@@ -45,7 +45,7 @@ const DoctorProfile = () => {
                             ))
                         }
                     </div>
-                    <div className='flex gap-4 mt-4'>
+                    <div className='flex flex-col lg:flex-row gap-1 lg:gap-4 mt-4'>
                         <p className='font-bold'>Consultation Fee:</p>
                         <p className='text-[#176AE5] font-extrabold'>Taka : {consultation_fee}  <span className='text-[#14141480] font-normal'>(incl. Vat)</span> <span className='font-normal'>Per consultation</span></p>
                     </div>
