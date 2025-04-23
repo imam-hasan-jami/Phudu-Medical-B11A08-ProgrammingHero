@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { getBookedAppointments } from '../utils';
+// import { getBookedAppointments } from '../utils';
 import { Bar, Cell, BarChart, CartesianGrid, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
-const FeeChart = () => {
+const FeeChart = ({ appointments }) => {
     const [chartData, setChartData] = useState([]);
 
     const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
     useEffect(() => {
-        const appointments = getBookedAppointments();
+        // const appointments = getBookedAppointments();
 
         const feeData = appointments.map(appointment => ({
             name: appointment.name,
@@ -16,7 +16,7 @@ const FeeChart = () => {
         }));
         
         setChartData(feeData);
-    }, [chartData]);
+    }, [appointments]);
 
     const getPath = (x, y, width, height) => {
         return `M${x},${y + height}C${x + width / 3},${y + height} ${

@@ -29,7 +29,7 @@ const MyBookings = () => {
                 appointments.length > 0 ? (
                     <div className='max-w-[380px] mx-auto lg:max-w-[1440px] lg:mt-25'>
                         <div className='mt-14 mb-25'>
-                            <FeeChart />
+                            <FeeChart appointments={appointments} />
                         </div>
                         <div className='flex flex-col items-center justify-center'>
                             <h1 className='text-4xl font-extrabold'>My Today Appointments</h1>
